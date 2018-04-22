@@ -1,3 +1,25 @@
-h1{
-	color: pink;
+@import '../design-patterns/pattern-library';
+@import url('https://fonts.googleapis.com/css?family=Cinzel');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Slab');
+
+$header-title-font: 'Cinzel', san serif;
+$body-font: 'Josefin Slab', serif;
+$header-color: #3b3a30;
+$accent-color: #c0ded9;
+$header-font-color: #b2c2bf;
+$accent-font-color: black;
+
+
+
+.pageWrapper h1{
+	display: grid;
+	font-family: $header-title-font;
+	background-color: $header-color;
+	color:$header-font-color;
+}
+
+.pageWrapper{
+	font-family:$body-font;
+	background-color: $accent-color;
+	color:$accent-font-color;
 }
