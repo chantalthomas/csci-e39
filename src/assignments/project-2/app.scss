@@ -1,0 +1,84 @@
+@import '../design-patterns/pattern-library';
+@import '../design-patterns/normalize';
+@import url(https://fonts.googleapis.com/css?family=Vollkorn);
+@import url(https://fonts.googleapis.com/css?family=Lato);
+
+/*Variables*/
+$header-background: #328CC1;
+$roster-background: #D9B310;
+$messages-background: white;
+$input-background-outline: #0B3C5D;
+
+$header-text-color: white;
+$roster-names: white;
+$message-text-color: #1D2731;
+$input-text-color: #1D2731;
+
+$title-font-global: 'Vollkorn', serif;
+$messages-font-global: 'Lato', sans serif;
+
+$page-height: 65vh;
+
+.overall-wrapper {
+    width: 100%;
+    margin: 2rem;
+    display: grid;
+    grid-column-gap: 0.5rem;
+    grid-template-columns: 15% 29% 29% 20%;
+    grid-template-areas:    "app-header          app-header           app-header           app-header "
+                            "members-list        chatroom-list        chatroom-list        chatroom-list"
+                            "members-list        chatroom-list        chatroom-list        chatroom-list"
+                            "members-list        chatroom-list        chatroom-list        chatroom-list"
+                            "chatroom-status     chatroom-status      chatroom-status      chatroom-status";
+}
+
+.app-header{
+    background-color: $header-background;
+    color: $header-text-color;
+    font-family: $title-font-global;
+    width: 100%;
+    justify-content: center;
+    grid-area: app-header;
+        h1{
+            padding: 1rem;
+        }
+}
+
+
+.members-list{
+    grid-area: members-list ;
+    background-color: $roster-background;
+    color: $roster-names;
+    overflow: auto;  
+}
+
+.chatroom-list{
+    grid-area:chatroom-list;
+    max-height: $page-height;
+    overflow: scroll;
+
+    li{
+        display: blcok;
+        list-style-type: none;
+    }
+}
+
+.current-users-typing {
+        grid-area: chatroom-status;
+
+}
+
+.footer{
+    background-color: $messages-background;
+    border: 2px solid $input-background-outline;
+    position:fixed;
+    bottom: 0;
+    width: 90%;
+    margin: 2rem auto;
+    padding: 0.5rem;
+
+    .user-input{
+        width:90%;
+        margin: 0.25rem;
+    }
+}
